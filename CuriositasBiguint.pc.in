@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+includedir=@CMAKE_INSTALL_PREFIX@/include
+libdir=@CMAKE_INSTALL_PREFIX@/lib
+
+Name: CuriositasBiguint
+Description: An educational library to implement an natural number type from scratch
+URL: https://github.com/curiositas-books
+Version: @CuriositasBiguint_VERSION@
+Cflags: -I${includedir}
+Libs: -L${libdir} -lCuriositasBiguint
