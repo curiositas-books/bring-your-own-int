@@ -16,8 +16,8 @@ Supplementary repository for the book "Bring Your Own Int" that implements an in
 
 The book is available in multiple digital formats, as `PDF`, `epub` or Kindle E-Book.
 
-- [GumRoad]()
-- [Amazon]()
+- [GumRoad - Preferred Option](https://curiositasbooks.gumroad.com/l/build-your-own-int)
+- [Amazon - Not yet available]()
 
 ## How to Work with the Repository
 
