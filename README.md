@@ -3,8 +3,9 @@
   <a href="https://github.com/curiositas-books/bring-your-own-int/actions/workflows/project.yml"><img src="https://github.com/curiositas-books/bring-your-own-int/actions/workflows/project.yml/badge.svg" /></a>
   <a href="https://github.com/curiositas-books/bring-your-own-int/actions/workflows/reference.yml"><img src="https://github.com/curiositas-books/bring-your-own-int/actions/workflows/reference.yml/badge.svg" /></a><br />
   <a href="#about">About</a> |
-  <a href="#get-the-book">Get It</a> |
-  <a href="#how-to-work-with-the-repository">Usage</a> |
+  <a href="#get-the-book">Get Book</a> |
+  <a href="#quickstart">Quickstart</a> |
+  <a href="#starting-your-own-version">Start Your Own Version</a> |
   <a href="#curiositas-books">Curiositas Books</a>
 </p>
 
@@ -19,7 +20,64 @@ The book is available in multiple digital formats, as `PDF`, `epub` or Kindle E-
 - [GumRoad (PDF, EPUB) - Preferred Option](https://curiositasbooks.gumroad.com/l/build-your-own-int)
 - [Amazon (EPUB only)](https://www.amazon.com/dp/B0BTCFQCND)
 
-## How to Work with the Repository
+## Quickstart
+
+The following commands are just pointers for a common environment - Ubuntu Linux.
+If your build environment differs you may need to adjust the setup.
+Additionally, there are many ways to install the dependencies and the project
+assumes up-to-date toolchains, build systems and environments.
+
+**Note:** You can use `Github Codespaces` to run the code online and don't need
+to pollute your own environment or waste time on the whole setup!
+
+### Building and Using the Prepared Code
+
+In an `ubuntu:22.04` based environment (WSL2, Native Ubuntu, Docker Container, Cloud VM):
+```bash
+$ # Optionally: Install dependencies to build C++ software
+$ sudo apt-get update
+$ # 'catch2' might not be present in the repository, depending on the ubuntu
+$ # version.
+$ sudo apt-get install build-essential catch2 git ninja-build pkg-config python3-pip
+$ sudo pip3 install meson
+
+$ cd <your-software-directory>
+$ # Use your own repository path here!
+$ git clone https://github.com/curiositas-books/bring-your-own-int.git
+$ cd bring-your-own-int
+$ meson setup build
+$ meson compile -C build
+$ meson test -C build
+
+$ # Run the provided executables:
+$ ./build/bin/sieve_eratosthenes 10
+> <No output, Implementation is your job :)>
+$ ./build/bin/collatz_chain 1230815809128370172541231203988123
+> <No output, Implementation is your job :)>
+```
+
+### Building and Using the Reference Implementation
+
+The instruction assume, that you already cloned the project as described above.
+```bash
+$ cd bring-your-own-int/reference-impl
+$ meson setup build
+$ meson compile -C build
+$ meson test -C build
+
+$ # Run the provided executables:
+$ ./build/bin/sieve_eratosthenes 10
+> 2
+> 3
+> 5
+> 7
+$ ./build/bin/collatz_chain 1230815809128370172541231203988123
+> Chain Length for 1230815809128370172541231203988123: 1007
+```
+
+
+
+## Starting Your Own Version
 
 - generate repo from this template repository
 - supports both `CMake` and `meson` as build system -> universal in terms of platforms
