@@ -1,5 +1,3 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile"
-    }
+    "image": "ghcr.io/curiositas-books/bring-your-own-int:main"
 }
