@@ -5,7 +5,6 @@
   <a href="#about">About</a> |
   <a href="#get-the-book">Get Book</a> |
   <a href="#quickstart">Quickstart</a> |
-  <a href="#starting-your-own-version">Start Your Own Version</a> |
   <a href="#curiositas-books">Curiositas Books</a>
 </p>
 
@@ -22,15 +21,18 @@ The book is available in multiple digital formats, as `PDF`, `epub` or Kindle E-
 
 ## Quickstart
 
-The following commands are just pointers for a common environment - Ubuntu Linux.
-If your build environment differs you may need to adjust the setup.
-Additionally, there are many ways to install the dependencies and the project
-assumes up-to-date toolchains, build systems and environments.
+The simplest way to start coding is creating your own respository from this
+template and using `Github Codespaces` for your own version of the project.
+The `devcontainer` provided contains the necessary tools to build the project
+and execute tests.
 
-**Note:** You can use `Github Codespaces` to run the code online and don't need
-to pollute your own environment or waste time on the whole setup!
+### Dependencies
 
-### Building and Using the Prepared Code
+- [catch2 2.x](https://github.com/catchorg/Catch2/tree/v2.x)
+- [cmake >= 3.23.0](https://cmake.org/download/) or [meson 1.0.0](https://mesonbuild.com/Getting-meson.html)
+- (optional when using `CMake`) [ninja-build](https://ninja-build.org/)
+
+### Building in Ubuntu 22.04
 
 In an `ubuntu:22.04` based environment (WSL2, Native Ubuntu, Docker Container, Cloud VM):
 ```bash
@@ -39,7 +41,7 @@ $ sudo apt-get update
 $ # 'catch2' might not be present in the repository, depending on the ubuntu
 $ # version.
 $ sudo apt-get install build-essential catch2 git ninja-build pkg-config python3-pip
-$ sudo pip3 install meson
+$ sudo pip3 install meson cmake
 
 $ cd <your-software-directory>
 $ # Use your own repository path here!
@@ -74,16 +76,6 @@ $ ./build/bin/sieve_eratosthenes 10
 $ ./build/bin/collatz_chain 1230815809128370172541231203988123
 > Chain Length for 1230815809128370172541231203988123: 1007
 ```
-
-
-
-## Starting Your Own Version
-
-- generate repo from this template repository
-- supports both `CMake` and `meson` as build system -> universal in terms of platforms
-- check CI
-- implement your own version directly in the repo
-- the repository contains the reference implementation created in the book, including supplemental material
 
 ## Curiositas Books
 
