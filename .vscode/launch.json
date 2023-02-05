@@ -1,0 +1,52 @@
+{
+    "configurations": [
+    {
+        "name": "(gdb) collatz_chain",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/collatz_chain",
+        "args": ["100"],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}/build",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Pretty Printing",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Intel Disassembly",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
+    },
+    {
+        "name": "(gdb) sieve_eratosthenes",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/sieve_eratosthenes",
+        "args": ["100"],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}/build",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Pretty Printing",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Intel Disassembly",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
+    }
+    ]
+}
