@@ -1,3 +1,8 @@
 {
-    "image": "ghcr.io/curiositas-books/bring-your-own-int:main"
+    "image": "ghcr.io/curiositas-books/bring-your-own-int:main",
+    "customizations": {
+        "vscode": {
+          "extensions": ["ms-vscode.cpptools", "ms-vscode.cpptools-extension-pack", "ms-vscode.cmake-tools", "fizzybreezy.gnuplot", "MarioSchwalbe.gnuplot"]
+        }
+    }
 }
